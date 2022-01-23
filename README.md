@@ -10,6 +10,10 @@ For the first two questions, input integers greater then 0. For entering a guess
 
 Learned basic rust syntax, cargo, 'use', input/output, etc.
 
+## Optimizations
+
+Amortization, Less redundant work for strings moved outside or only called when nesscary, cargo clippy!
+
 ## Sample Run
 
 > (*italicized text* is input)
