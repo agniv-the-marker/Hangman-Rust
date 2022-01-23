@@ -15,9 +15,13 @@ Learned basic rust syntax, cargo, 'use', input/output, etc.
 > (*italicized text* is input)
 
 How many games do you want to play? (Please enter a number greater then 0)
+
 *2*
+
 How many wrong guesses do you want? (Please enter a number greater then 0)
+
 *3*
+
 Game 1!
 You are now guessing: _______    
 You have guessed these letter(s):
