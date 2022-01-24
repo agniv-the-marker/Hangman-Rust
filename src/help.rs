@@ -44,7 +44,6 @@ fn get_words(words: usize) -> Vec<String> {
         let word = vec[i].trim().to_owned();
         vec.remove(i);
         w.push(word);
-        
     }
     w
 }
