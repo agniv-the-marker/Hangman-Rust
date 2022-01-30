@@ -1,4 +1,4 @@
-use help::{start, cur_word, input, remove_duplicates, end};
+use help::{start, cur_word, get_word, input, remove_duplicates, end};
 
 fn main() {
     use std::time::Instant;
@@ -11,7 +11,7 @@ fn main() {
     let guesses;
 
     if test {
-        let (t_games, t_words, t_guesses) = (1, vec!["architecture".to_string()],10);
+        let (t_games, t_words, t_guesses) = (1, vec![get_word().to_string()],10);
         games = t_games;
         words = t_words;
         guesses = t_guesses;
