@@ -1,5 +1,9 @@
 use help::{start, cur_word, input, remove_duplicates, end};
+
 fn main() {
+    use std::time::Instant;
+    let now = Instant::now();
+
     print!("\x1B[2J\x1B[1;1H");
 
     let (games, words, guesses) = start(); 
@@ -13,7 +17,10 @@ fn main() {
     let mut ask;
     let mut used;
     let mut chances;
-    let mut guess;
+    let mut guess: String;
+    let mut index;
+    let alphabet = "abcdefghijklmnopqrstuvwxyz".to_owned();
+    let test = false;
 
     for g in 0..games {
 
@@ -27,10 +34,18 @@ fn main() {
         ask = format!("You are now guessing: {}", "_".repeat(word.len()));
         used = "You have guessed these letter(s):\n".to_owned();
         chances = format!("You have {} more chance(s).\nGuess a letter or the word:", guesses-w_guessed_letters.len());
+        index = 0;
 
         while w_guessed_letters.len() < guesses {
             print!("{}\n{}{} ", ask, used, chances);
-            guess = input().trim().to_owned();
+
+            if test {
+                index += 1;
+                index %= 26;
+                guess = (*&alphabet[index..index+1]).to_string();
+            } else {
+                guess = input().trim().to_owned();
+            }
             if guess == "EXIT" {
                 end();
                 break;
@@ -73,6 +88,10 @@ fn main() {
         } else {
             println!("Better luck next time!\nThe word was {}.\n", word);
         }
+    }
+    if test {
+        let elapsed = now.elapsed();
+        println!("Elapsed: {:.2?}", elapsed);
     }
     end();
 }
