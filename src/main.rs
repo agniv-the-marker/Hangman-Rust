@@ -2,8 +2,9 @@ use help::{start, cur_word, get_word, input, remove_duplicates, end};
 
 fn main() {
     use std::time::Instant;
+    let mut count = 0;
     let now = Instant::now();
-    let test = false;
+    let test = true;
     print!("\x1B[2J\x1B[1;1H");
 
     let games;
@@ -36,7 +37,7 @@ fn main() {
     let alphabet = "abcdefghijklmnopqrstuvwxyz".to_owned();
 
     for g in 0..games {
-
+        count += 1;
         println!("Game {}!", g+1);
         word = words.get(g).unwrap();
         guessed = false;  
@@ -50,6 +51,7 @@ fn main() {
         index = 0;
 
         while w_guessed_letters.len() < guesses {
+            count += 1;
             print!("{}\n{}{} ", ask, used, chances);
 
             if test {
@@ -85,6 +87,7 @@ fn main() {
                 println!("{} was a letter!", guess);
                 r_guessed_letters.push(guess);
                 ask = cur_word(word, &r_guessed_letters);
+                count += ask.len();
                 println!("{}", letters[0]);
                 if r_guessed_letters.len() == letters.len() {
                     guessed = true;
@@ -105,6 +108,7 @@ fn main() {
     if test {
         let elapsed = now.elapsed();
         println!("Elapsed: {:.2?}", elapsed);
+        println!("{}", count);
     }
     end();
 }
