@@ -4,7 +4,7 @@ fn main() {
     use std::time::Instant;
     let mut count = 0;
     let now = Instant::now();
-    let test = true;
+    let test = false;
     print!("\x1B[2J\x1B[1;1H");
 
     let games;
