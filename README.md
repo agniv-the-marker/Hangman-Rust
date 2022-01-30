@@ -14,6 +14,10 @@ Learned basic rust syntax, cargo, 'use', input/output, etc.
 
 Amortization, Less redundant work for strings moved outside or only called when nesscary, cargo clippy!
 
+## Testing
+
+In order to test, go into the code and change the variable "test" to have the value true. It will then tell you how long it takes for it to get a word.
+
 ## Sample Run
 
 > (*italicized text* is input)
