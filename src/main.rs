@@ -3,10 +3,24 @@ use help::{start, cur_word, input, remove_duplicates, end};
 fn main() {
     use std::time::Instant;
     let now = Instant::now();
-
+    let test = false;
     print!("\x1B[2J\x1B[1;1H");
 
-    let (games, words, guesses) = start(); 
+    let games;
+    let words;
+    let guesses;
+
+    if test {
+        let (t_games, t_words, t_guesses) = (1, vec!["architecture".to_string()],10);
+        games = t_games;
+        words = t_words;
+        guesses = t_guesses;
+    } else {
+        let (t_games, t_words, t_guesses) = start(); 
+        games = t_games;
+        words = t_words;
+        guesses = t_guesses;
+    }
 
     let mut word;
     let mut guessed;
@@ -20,7 +34,6 @@ fn main() {
     let mut guess: String;
     let mut index;
     let alphabet = "abcdefghijklmnopqrstuvwxyz".to_owned();
-    let test = false;
 
     for g in 0..games {
 
