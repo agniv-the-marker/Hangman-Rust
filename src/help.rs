@@ -33,15 +33,7 @@ pub fn cur_word(word: &str, r_guessed_letters: &[String]) -> String {
     ask
 }
 
-pub fn get_word() -> String {
-    let temp = fs::read_to_string("src/words.txt").expect("Something went wrong reading the file");
-    let contents = temp.trim().split('\n');
-    let vec = contents.collect::<Vec<&str>>();
-    let mut rng = rand::thread_rng();
-    vec[rng.gen_range(0..vec.len())].trim().to_owned()
-}
-
-fn get_words(words: usize) -> Vec<String> {
+pub fn get_words(words: usize) -> Vec<String> {
     let temp = fs::read_to_string("src/words.txt").expect("Something went wrong reading the file");
     let contents = temp.trim().split('\n');
     let mut vec = contents.collect::<Vec<&str>>();
