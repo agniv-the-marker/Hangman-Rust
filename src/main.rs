@@ -11,7 +11,7 @@ fn main() {
     let guesses;
 
     if test {
-        let (t_games, t_words, t_guesses) = (1, vec![get_word().to_string()],10);
+        let (t_games, t_words, t_guesses) = (1, vec![get_word()],10);
         games = t_games;
         words = t_words;
         guesses = t_guesses;
@@ -55,7 +55,7 @@ fn main() {
             if test {
                 index += 1;
                 index %= 26;
-                guess = (*&alphabet[index..index+1]).to_string();
+                guess = (&alphabet[index..index+1]).to_string();
             } else {
                 guess = input().trim().to_owned();
             }
